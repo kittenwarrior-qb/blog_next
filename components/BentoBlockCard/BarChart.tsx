@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import {
   Chart as ChartJS,
@@ -8,10 +8,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from 'chart.js'
+import { Bar } from 'react-chartjs-2'
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const options = {
   responsive: true,
@@ -24,15 +24,9 @@ export const options = {
       text: 'Skills Overview (Hours Spent)',
     },
   },
-};
+}
 
-const labels = [
-  'TypeScript',
-  'Mdx',
-  'JavaScript',
-  'Python',
-  'HTML'
-];
+const labels = ['TypeScript', 'Mdx', 'JavaScript', 'Python', 'HTML']
 
 export const data = {
   labels,
@@ -49,12 +43,12 @@ export const data = {
       ],
     },
   ],
-};
+}
 
 export default function SkillsBarChart() {
   return (
-    <div className="block-custom col-start-2 row-start-2 p-4 flex items-center justify-center relative group border border-zinc-200 dark:border-zinc-800 rounded-lg">
+    <div className="block-custom group relative col-start-2 row-start-2 flex items-center justify-center rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
       <Bar options={options} data={data} />
     </div>
-  );
+  )
 }

@@ -9,12 +9,12 @@ import GitHubMascot from './BentoBlockCard/GithubMascot'
 const BentoBlock = () => {
   return (
     <>
-        <GitHubUserCard />
-        <ContributionGraph />
-        <SpotifyCard />
-        <YouTubeBlock/> 
-        <LanguageBarChart /> 
-        <GitHubMascot/>
+      <GitHubUserCard />
+      <ContributionGraph />
+      <SpotifyCard />
+      <YouTubeBlock />
+      <LanguageBarChart />
+      <GitHubMascot />
     </>
   )
 }

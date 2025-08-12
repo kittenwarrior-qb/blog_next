@@ -2,7 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import { qurova } from './fonts' 
+import { qurova } from './fonts'
 import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
@@ -13,7 +13,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import MinoAssistant from '@/components/Mino/Assistant'
-import { MinoProvider } from "@/components/Mino/MinoContext";
+import { MinoProvider } from '@/components/Mino/MinoContext'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const basePath = process.env.BASE_PATH || ''
 
   return (
-   <html
+    <html
       lang={siteMetadata.language}
       className={`${space_grotesk.variable} ${qurova.variable} scroll-smooth`}
       suppressHydrationWarning

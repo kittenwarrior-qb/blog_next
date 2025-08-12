@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
 interface Props {
-  text: string;
-  onClick: () => void;
-  showOptions: boolean;
-  isTyping: boolean;
-  onClose: () => void;
-  currentMessageId: string;
-  onGuideClick: () => void;
-  isGuideOpen: boolean;
-  onGuideSelect: (option: string) => void;
+  text: string
+  onClick: () => void
+  showOptions: boolean
+  isTyping: boolean
+  onClose: () => void
+  currentMessageId: string
+  onGuideClick: () => void
+  isGuideOpen: boolean
+  onGuideSelect: (option: string) => void
 }
 
 export default function MinoDialog({
@@ -24,39 +24,37 @@ export default function MinoDialog({
   onGuideSelect,
 }: Props) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 h-[180px] bg-black/80 px-4 pb-4 sm:pb-6">
+    <div className="fixed right-0 bottom-0 left-0 z-40 h-[180px] bg-black/80 px-4 pb-4 sm:pb-6">
       <div
-        className="relative mx-auto max-w-3xl h-full shadow-xl px-6 py-4 flex flex-col justify-between"
+        className="relative mx-auto flex h-full max-w-3xl flex-col justify-between px-6 py-4 shadow-xl"
         onClick={onClick}
       >
         <button
           onClick={(e) => {
-            e.stopPropagation();
-            onClose();
+            e.stopPropagation()
+            onClose()
           }}
-          className="absolute top-3 right-4 text-white text-xl"
+          className="absolute top-3 right-4 text-xl text-white"
         >
           &times;
         </button>
 
-        <div className="text-base md:text-lg font-medium text-white overflow-y-auto min-h-[4rem]">
+        <div className="min-h-[4rem] overflow-y-auto text-base font-medium text-white md:text-lg">
           {text}
         </div>
 
         {isTyping && (
           <div className="mt-2 text-right">
-            <span className="text-sm text-white font-semibold">
-              Click to skip...
-            </span>
+            <span className="text-sm font-semibold text-white">Click to skip...</span>
           </div>
         )}
 
-        {showOptions && currentMessageId === "intro" && (
+        {showOptions && currentMessageId === 'intro' && (
           <div className="mt-4 flex flex-wrap gap-4">
             <button
               onClick={(e) => {
-                e.stopPropagation();
-                onGuideClick();
+                e.stopPropagation()
+                onGuideClick()
               }}
               className="text-white underline transition"
             >
@@ -72,24 +70,21 @@ export default function MinoDialog({
         )}
 
         {isGuideOpen && (
-          <div className="absolute top-[-160px] left-0 right-0 bg-black/90 px-4 py-4 rounded-md shadow-md">
-            <div className="flex flex-col gap-3 text-sm text-white font-medium">
+          <div className="absolute top-[-160px] right-0 left-0 rounded-md bg-black/90 px-4 py-4 shadow-md">
+            <div className="flex flex-col gap-3 text-sm font-medium text-white">
               <button
                 className="text-left hover:underline"
-                onClick={() => onGuideSelect("creator")}
+                onClick={() => onGuideSelect('creator')}
               >
                 Ai tạo ra bạn?
               </button>
               <button
                 className="text-left hover:underline"
-                onClick={() => onGuideSelect("projects")}
+                onClick={() => onGuideSelect('projects')}
               >
                 Các project của trang web
               </button>
-              <button
-                className="text-left hover:underline"
-                onClick={() => onGuideSelect("deeper")}
-              >
+              <button className="text-left hover:underline" onClick={() => onGuideSelect('deeper')}>
                 Hỏi sâu hơn
               </button>
             </div>
@@ -97,5 +92,5 @@ export default function MinoDialog({
         )}
       </div>
     </div>
-  );
+  )
 }

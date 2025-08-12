@@ -1,18 +1,18 @@
 // components/Mino/Character.tsx
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 interface Props {
-  isAwake: boolean;
-  isTalking: boolean;
-  currentImage: string;
+  isAwake: boolean
+  isTalking: boolean
+  currentImage: string
 }
 
 export default function MinoCharacter({ isAwake, isTalking, currentImage }: Props) {
-  if (!isAwake) return null;
+  if (!isAwake) return null
 
   return (
-    <div className="fixed bottom-[180px] left-0 md:left-[80px] lg:left-[100px] z-30">
+    <div className="fixed bottom-[180px] left-0 z-30 md:left-[80px] lg:left-[100px]">
       <Image
         src={`/static/images/Mino/happy/${currentImage}`}
         alt="Mino"
@@ -21,5 +21,5 @@ export default function MinoCharacter({ isAwake, isTalking, currentImage }: Prop
         priority
       />
     </div>
-  );
+  )
 }

@@ -7,23 +7,23 @@
 /* Core theme configuration */
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Colors */
   /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
---color-primary-50:  oklch(0.971 0.014 290);
---color-primary-100: oklch(0.948 0.028 290);
---color-primary-200: oklch(0.899 0.061 290);
---color-primary-300: oklch(0.823 0.120 290);
---color-primary-400: oklch(0.718 0.202 290);
---color-primary-500: oklch(0.656 0.241 290);
---color-primary-600: oklch(0.592 0.249 290);
---color-primary-700: oklch(0.525 0.223 290);
---color-primary-800: oklch(0.459 0.187 290);
---color-primary-900: oklch(0.408 0.153 290);
---color-primary-950: oklch(0.284 0.109 290);
-
+  --color-primary-50: oklch(0.971 0.014 290);
+  --color-primary-100: oklch(0.948 0.028 290);
+  --color-primary-200: oklch(0.899 0.061 290);
+  --color-primary-300: oklch(0.823 0.12 290);
+  --color-primary-400: oklch(0.718 0.202 290);
+  --color-primary-500: oklch(0.656 0.241 290);
+  --color-primary-600: oklch(0.592 0.249 290);
+  --color-primary-700: oklch(0.525 0.223 290);
+  --color-primary-800: oklch(0.459 0.187 290);
+  --color-primary-900: oklch(0.408 0.153 290);
+  --color-primary-950: oklch(0.284 0.109 290);
 
   --color-gray-50: oklch(0.985 0.002 247.839);
   --color-gray-100: oklch(0.967 0.003 264.542);

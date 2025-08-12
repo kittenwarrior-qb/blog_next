@@ -48,6 +48,7 @@ export default [
     },
 
     rules: {
+      "@next/next/no-img-element": "off",
       'prettier/prettier': 'error',
       'react/react-in-jsx-scope': 'off',
 

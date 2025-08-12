@@ -6,11 +6,11 @@ import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
-import { useMino } from "./Mino/MinoContext";
+import { useMino } from './Mino/MinoContext'
 import { MinoIcon } from './social-icons/mino'
 
 const Header = () => {
-  const { wake } = useMino();
+  const { wake } = useMino()
   let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-4'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
@@ -21,9 +21,7 @@ const Header = () => {
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           {typeof siteMetadata.headerTitle === 'string' ? (
-            <div className="hidden text-xl font-semibold sm:block">
-              {siteMetadata.headerTitle}
-            </div>
+            <div className="hidden text-xl font-semibold sm:block">{siteMetadata.headerTitle}</div>
           ) : (
             siteMetadata.headerTitle
           )}

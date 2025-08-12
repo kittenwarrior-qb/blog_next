@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import { useMino } from "./MinoContext";
-import MinoCharacter from "./Character";
-import MinoDialog from "./Dialog";
+'use client'
+import React from 'react'
+import { useMino } from './MinoContext'
+import MinoCharacter from './Character'
+import MinoDialog from './Dialog'
 
 export default function MinoAssistant() {
   const {
@@ -18,22 +18,17 @@ export default function MinoAssistant() {
     currentMessage,
     toggleGuide,
     isGuideOpen,
-    
-  } = useMino();
+  } = useMino()
 
   const handleClick = () => {
-    if (isTyping) skipTyping();
-    else nextMessage();
-  };
+    if (isTyping) skipTyping()
+    else nextMessage()
+  }
 
   return (
     <div className="relative z-50">
       <div className="pointer-events-none">
-        <MinoCharacter
-          isAwake={isAwake}
-          isTalking={isTyping}
-          currentImage={currentFrameImage}
-        />
+        <MinoCharacter isAwake={isAwake} isTalking={isTyping} currentImage={currentFrameImage} />
       </div>
 
       {isAwake && (
@@ -44,27 +39,27 @@ export default function MinoAssistant() {
             showOptions={showOptions}
             onClick={handleClick}
             onClose={close}
-            currentMessageId={currentMessage?.id ?? ""}
+            currentMessageId={currentMessage?.id ?? ''}
             onGuideClick={toggleGuide}
             isGuideOpen={isGuideOpen}
             onGuideSelect={() => {}}
           />
-          <div className="fixed bottom-0 left-[30px] lg:left-[475px] z-50 flex gap-2">
+          <div className="fixed bottom-0 left-[30px] z-50 flex gap-2 lg:left-[475px]">
             <button
               onClick={(e) => {
-                e.stopPropagation();
-                goBack();
+                e.stopPropagation()
+                goBack()
               }}
-              className="px-3 py-1 text-sm text-white rounded"
+              className="rounded px-3 py-1 text-sm text-white"
             >
               Back
             </button>
             <button
               onClick={(e) => {
-                e.stopPropagation();
-                nextMessage();
+                e.stopPropagation()
+                nextMessage()
               }}
-              className="px-3 py-1 text-sm text-white rounded"
+              className="rounded px-3 py-1 text-sm text-white"
             >
               Next
             </button>
@@ -72,5 +67,5 @@ export default function MinoAssistant() {
         </div>
       )}
     </div>
-  );
+  )
 }
