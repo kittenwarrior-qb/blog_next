@@ -37,8 +37,17 @@ export default function SpotifyCard() {
 
   return (
     <div
-      className="block-custom group relative col-span-1 row-span-1 flex cursor-pointer flex-col items-center justify-center overflow-hidden rounded-md border border-zinc-200 px-5 py-6 dark:border-zinc-800"
+      role="button"
+      tabIndex={0}
       onClick={() => data?.url && window.open(data.url, '_blank')}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (data?.url) {
+            window.open(data.url, '_blank')
+          }
+        }
+      }}
+      className="block-custom group relative col-span-1 row-span-1 flex cursor-pointer flex-col items-center justify-center overflow-hidden rounded-md border border-zinc-200 px-5 py-6 dark:border-zinc-800"
     >
       <div className="flex w-full flex-col items-center justify-center">
         <div className="relative">

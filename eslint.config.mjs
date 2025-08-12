@@ -51,7 +51,8 @@ export default [
       "@next/next/no-img-element": "off",
       'prettier/prettier': 'error',
       'react/react-in-jsx-scope': 'off',
-
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
       'jsx-a11y/anchor-is-valid': [
         'error',
         {
