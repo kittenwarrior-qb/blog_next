@@ -29,11 +29,12 @@ export default function ContributionGraph() {
   }, []);
 
   const getColorClass = (count: number): string => {
-    if (count === 0) return "bg-[#f4f4f5]";
-    if (count < 4) return "bg-[#80e4a8]";
-    if (count < 7) return "bg-[#40d67c]";
-    return "bg-[#00c950]";
+    if (count === 0) return "bg-[#f4f4f5] dark:bg-[#1f2937]"; 
+    if (count < 4) return "bg-[#80e4a8] dark:bg-[#34d399]";   
+    if (count < 7) return "bg-[#40d67c] dark:bg-[#059669]";   
+    return "bg-[#00c950] dark:bg-[#047857]";                  
   };
+
 
   const getMonthLabels = () => {
     const labels: { idx: number; month: string }[] = [];
@@ -55,7 +56,7 @@ export default function ContributionGraph() {
   return (
     <div
       ref={containerRef}
-      className="block-custom col-span-2 row-span-1 p-4 flex flex-col items-center justify-center relative group rounded-lg border"
+      className="block-custom col-span-2 row-span-1 p-4 flex flex-col items-center justify-center relative group rounded-lg border border-zinc-200 dark:border-zinc-800"
     >
       {/* Month Labels */}
       <div className="grid grid-flow-col auto-cols-max gap-[5px] text-sm text-gray-600 dark:text-gray-300 mb-2 z-10 relative">
@@ -83,8 +84,8 @@ export default function ContributionGraph() {
                   const containerRect = containerRef.current?.getBoundingClientRect();
                   if (containerRect) {
                     setTooltipPos({
-                      x: rect.left - containerRect.left + rect.width + 8, // right side + spacing
-                      y: rect.top - containerRect.top - 4, // top aligned
+                      x: rect.left - containerRect.left + rect.width + 8, 
+                      y: rect.top - containerRect.top - 4,
                     });
                   }
                 }}

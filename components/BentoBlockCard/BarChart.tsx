@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -22,27 +21,39 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Languages & Learning Time',
+      text: 'Skills Overview (Hours Spent)',
     },
   },
 };
 
-const labels = ['JavaScript', 'TypeScript', 'Python', 'Go', 'Rust'];
+const labels = [
+  'TypeScript',
+  'Mdx',
+  'JavaScript',
+  'Python',
+  'HTML'
+];
 
 export const data = {
   labels,
   datasets: [
     {
       label: 'Hours Spent',
-      data: [30, 45, 20, 10, 5],
-      backgroundColor: 'rgba(255, 206, 86, 0.5)',
+      data: [120, 200, 80, 100, 60],
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(255, 159, 64, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 205, 86, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+      ],
     },
   ],
 };
 
-export default function LanguageBarChart() {
+export default function SkillsBarChart() {
   return (
-    <div className="block-custom col-start-2 row-start-2 p-4 flex items-center justify-center relative group border  rounded-lg">
+    <div className="block-custom col-start-2 row-start-2 p-4 flex items-center justify-center relative group border border-zinc-200 dark:border-zinc-800 rounded-lg">
       <Bar options={options} data={data} />
     </div>
   );

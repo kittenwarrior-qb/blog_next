@@ -1,11 +1,7 @@
-import LanguageBarChart from '@/components/BentoBlockCard/BarChart'
-import ContributionGraph from '@/components/BentoBlockCard/ContributionGraph'
-import GitHubUserCard from '@/components/BentoBlockCard/GithubUserCard'
 import Link from '@/components/Link'
-import SpotifyCard from '@/components/BentoBlockCard/SportifyCard'
 import siteMetadata from '@/data/siteMetadata'
-import GitHubMascot from '@/components/BentoBlockCard/GithubMascot'
-import YouTubeBlock from '@/components/BentoBlockCard/YoutubeBlock'
+import BentoBlock from '@/components/BentoBlock'
+import ProjectBlock from '@/components/ProjectBlock'
 
 
 export default function Home() {
@@ -74,14 +70,11 @@ export default function Home() {
       </div>
 
         {/* Bento here */}
-      <div className="mt-10 grid grid-cols-4 grid-rows-2 gap-4 w-full max-w-7xl h-[600px] relative">
-        <GitHubUserCard />
-        <ContributionGraph />
-        <SpotifyCard />
-        <YouTubeBlock/> 
-        <LanguageBarChart /> 
-        <GitHubMascot/>
+      <div className="hidden md:grid mt-10  grd-cols-3 lg:grid-cols-4 grid-rows-2 gap-4 w-full max-w-7xl h-[600px] relative">
+        <BentoBlock />
       </div>
+
+      <ProjectBlock/>
     </section>
   )
 }
